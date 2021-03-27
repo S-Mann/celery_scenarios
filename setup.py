@@ -14,7 +14,8 @@ requirements = []
 
 setup_requirements = [
     'pytest-runner',
-    'celery==5.0.5'
+    'celery>=5.0.5',
+    'redis>=3.5.3'
 ]
 
 test_requirements = ['pytest>=3', ]
