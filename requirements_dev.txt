@@ -12,6 +12,7 @@ pytest==4.6.5
 pytest-runner==5.1
 
 # App specific dependencies
+ipython>=7.22.0
 celery>=5.0.5  # https://github.com/celery/celery/
 # I prefer redis as a memdb you can choose your service
 redis>=3.5.3  # https://github.com/andymccurdy/redis-py

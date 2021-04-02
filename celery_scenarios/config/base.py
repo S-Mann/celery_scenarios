@@ -5,4 +5,4 @@ broker_url = 'redis://localhost:6379/'
 imports = ('celery_scenarios.workflow',)
 
 # Using the database to store task state and results.
-# result_backend = 'db+sqlite:///results.db'
+result_backend = broker_url
