@@ -26,7 +26,31 @@ Celery workflows and scenarios
 Features
 --------
 
-* TODO
+- This application is a sandbox for my crazy celery workflow designs.
+- This is also very helpful for some who is looking to implement a workflow based on my learnings.
+
+Setup
+--------
+
+- Use `venv` in `Python3` and install Redis_
+- Install the necessary packages
+  ```sh
+  $ pip install -r requirements_dev.txt
+  ```
+- Start `beat` scheduler, this will periodically schedule the whole workflow within certain mins.
+  ```sh
+  $ celery -A celery_scenarios.celery_app beat --loglevel=INFO
+  ```
+- Start `worker`, this is where your workflow and tasks run.
+  ```sh
+  $ celery -A celery_scenarios.celery_app worker --loglevel=INFO
+  ```
+
+Configs
+--------
+
+- If you don't want to use `Redis`you can go ahead can change the configs in config.py_ and install and setup dependencies accordingly.
+- Don't like the periodic scheduler's schedule? You can configure it under the app's beat_schedule_.
 
 Credits
 -------
@@ -35,3 +59,6 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _Redis: https://redis.io/topics/quickstart
+.. _beat_schedule: ./celery_scenarios/celery_app/celery.py#L12
+.. _config.py: ./celery_scenarios/config/base.py
